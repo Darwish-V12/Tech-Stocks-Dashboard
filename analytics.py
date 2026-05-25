@@ -1,7 +1,7 @@
 """
 analytics.py
 ------------
-Pure pandas computations. No Streamlit, no plotting — just numbers in / numbers out.
+
 """
 
 from __future__ import annotations
