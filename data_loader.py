@@ -1,12 +1,7 @@
 """
 data_loader.py
 --------------
-Load and clean the tech stocks CSV.
 
-Skills from previous sessions used here:
-- Session 4: pure functions, type hints, modules.
-- Session 5: pd.read_csv, pd.to_datetime, .dropna, derived columns.
-- Session 7: @st.cache_data so the file is read from disk only once.
 """
 
 from __future__ import annotations
