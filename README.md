@@ -42,5 +42,5 @@ streamlit run app.py
 ## 👨‍💻 Developed By
 **Mustafa Darwish** 
 * AI Undergraduate @ Kafrelsheikh University
-* Founder of **Neurix** & **Tem 3**
+* Founder of **Neurix**
 *
