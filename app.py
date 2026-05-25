@@ -1,8 +1,6 @@
 """
 app.py — Tech Stocks Dashboard
-================================
-Final project for the Python Bootcamp.
-Run with: streamlit run app.py
+
 """
 
 import streamlit as st
