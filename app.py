@@ -1,6 +1,6 @@
 """
 app.py — Tech Stocks Dashboard
-
+------------------------------
 """
 
 import streamlit as st
@@ -11,14 +11,14 @@ import plots
 from data_loader import COMPANY_NAMES, TICKERS, apply_date_filter, load_stocks
 
 
-# ── 1. Page setup ─────────────────────────────────────────────────────────────
+# Page setup
 st.set_page_config(
     page_title="Tech Stocks Dashboard",
     page_icon="📈",
     layout="wide",
 )
 
-# ── 2. Futuristic CSS ─────────────────────────────────────────────────────────
+# Futuristic CSS 
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
@@ -165,7 +165,7 @@ header { visibility: hidden; }
 """, unsafe_allow_html=True)
 
 
-# ── 3. Header ─────────────────────────────────────────────────────────────────
+#  Header
 st.markdown("<h1>📈 TECH STOCKS DASHBOARD</h1>", unsafe_allow_html=True)
 st.markdown(
     "<p style='text-align:center; color:#8892b0; font-family:Rajdhani,sans-serif; "
@@ -176,11 +176,11 @@ st.markdown(
 )
 
 
-# ── 4. Load data ──────────────────────────────────────────────────────────────
+#  Load data
 df = load_stocks()
 
 
-# ── 5. Sidebar ────────────────────────────────────────────────────────────────
+# Sidebar 
 st.sidebar.header("Filters")
 
 min_date = df["Date"].min().date()
@@ -214,7 +214,7 @@ for ticker in TICKERS:
     )
 
 
-# ── 6. Apply filters ──────────────────────────────────────────────────────────
+# Apply filters
 if isinstance(date_range, tuple) and len(date_range) == 2:
     start_date, end_date = date_range
 else:
@@ -227,7 +227,7 @@ if filtered.empty or not selected_stocks:
     st.stop()
 
 
-# ── 7. Tabs ───────────────────────────────────────────────────────────────────
+#  Tabs
 tab_overview, tab_market, tab_analysis, tab_conclusion, tab_raw = st.tabs([
     "🏠 Overview",
     "📊 Market Share",
@@ -238,7 +238,7 @@ tab_overview, tab_market, tab_analysis, tab_conclusion, tab_raw = st.tabs([
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 1 — OVERVIEW
+# TAB _ OVERVIEW
 # ══════════════════════════════════════════════════════════════
 with tab_overview:
     kpis = analytics.overview_kpis(filtered)
@@ -277,7 +277,7 @@ with tab_overview:
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 2 — MARKET SHARE
+# TAB _ MARKET SHARE
 # ══════════════════════════════════════════════════════════════
 with tab_market:
     st.markdown("### Market Share")
@@ -303,7 +303,7 @@ with tab_market:
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 3 — STOCK ANALYSIS
+# TAB _ STOCK ANALYSIS
 # ══════════════════════════════════════════════════════════════
 with tab_analysis:
     st.markdown("### Analyze a Single Stock")
@@ -344,7 +344,7 @@ with tab_analysis:
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 4 — CONCLUSION
+# TAB _ CONCLUSION
 # ══════════════════════════════════════════════════════════════
 with tab_conclusion:
     st.markdown("### Conclusion")
@@ -416,7 +416,7 @@ with tab_conclusion:
 
 
 # ══════════════════════════════════════════════════════════════
-# TAB 5 — RAW DATA
+# TAB _ RAW DATA
 # ══════════════════════════════════════════════════════════════
 with tab_raw:
     st.markdown(f"### Raw Data — {len(filtered):,} rows")
@@ -432,15 +432,17 @@ with tab_raw:
         data=display_df.to_csv(index=False).encode("utf-8"),
         file_name="tech_stocks_filtered.csv",
         mime="text/csv",
+    )   
+# Footer
+    st.markdown("---")
+    st.markdown(
+        "<p style='text-align:center; color:#8892b0; font-size:0.85rem; "
+        "font-family:Rajdhani,sans-serif;'>"
+        "📈 Tech Stocks Dashboard · Python Bootcamp Final Project · "
+        "Built with Python, Pandas, Matplotlib & Streamlit</p>",
+        unsafe_allow_html=True,
     )
 
+    
+    
 
-# ── Footer ────────────────────────────────────────────────────────────────────
-st.markdown("---")
-st.markdown(
-    "<p style='text-align:center; color:#8892b0; font-size:0.85rem; "
-    "font-family:Rajdhani,sans-serif;'>"
-    "📈 Tech Stocks Dashboard · Python Bootcamp Final Project · "
-    "Built with Python, Pandas, Matplotlib & Streamlit</p>",
-    unsafe_allow_html=True,
-)
