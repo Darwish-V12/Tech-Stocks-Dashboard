@@ -40,9 +40,10 @@ streamlit run app.py
 ```
 
 ## 👨‍💻 Developed By
-**Mustafa Darwish** - Team 3
-* AI Undergraduate @ Kafrelsheikh University
-* Founder of **Neurix**
+**I would like to extend my sincere thanks to my team members who contributed to making this project a success.
+Team Members:**
+
+* **Mustafa Ali Darwish (myself)**
 * **Eslam Mohamed Zakaria**
 * **Mohamed Ahmed Shaaban**
 * **Abdelrahman Rabie Khalil**
