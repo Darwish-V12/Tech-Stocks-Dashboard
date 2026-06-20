@@ -1,7 +1,6 @@
 """
 analytics.py
 ------------
-
 """
 
 from __future__ import annotations
@@ -181,11 +180,11 @@ def conclusion(df: pd.DataFrame, tickers: list[str]) -> dict:
     riskiest_t = max(volatilities, key=volatilities.get)
 
     analysis_text = (
-        f"The market during this period is showing {market_trend} {trend_emoji}. "
-        f"Average market return: {avg_return:+.2f}%. "
+        f"The market during this period is showing {market_trend} {trend_emoji}."
+        f"Average market return: {avg_return:+.2f}%. \n\n"
         f"The best performing stock is {COMPANY_NAMES[best_t]} ({best_t}) "
-        f"with a {returns[best_t]:+.2f}% return. "
-        f"The lowest risk stock is {COMPANY_NAMES[safest_t]} ({safest_t}) "
+        f"with a {returns[best_t]:+.2f}% return.\n\n"
+        f"The lowest risk stock is {COMPANY_NAMES[safest_t]} ({safest_t}) \n\n"
         f"based on price volatility."
     )
 
@@ -200,4 +199,4 @@ def conclusion(df: pd.DataFrame, tickers: list[str]) -> dict:
         "safest_stock":     f"{COMPANY_NAMES[safest_t]} ({safest_t})",
         "riskiest_stock":   f"{COMPANY_NAMES[riskiest_t]} ({riskiest_t})",
         "analysis_text":    analysis_text,
-    }
+     }
