@@ -438,21 +438,19 @@ with tab_raw:
     st.markdown(
         "<p style='text-align:center; color:#8892b0; font-size:0.85rem; "
         "font-family:Rajdhani,sans-serif;'>"
-        "📈 Tech Stocks Dashboard · Python Bootcamp Final Project · "
-        "Built with Python, Pandas, Matplotlib & Streamlit</p>",
+        """
+ I would like to extend my sincere thanks to my team members who contributed to making this project a success.
+Team Members:
+
+Mustafa Ali Darwish (myself)\n\n
+Abdullah Mabrouk Abdelaziz\n\n
+Eslam Mohamed Zakaria\n\n
+Mohamed Ahmed Shaaban\n\n
+Abdelrahman Rabie Khalil\n\n""" 
+        "</p>",
         unsafe_allow_html=True,
     )
 
     
     
 
-
-# # Footer
-# st.markdown("---")
-# st.markdown(
-#     "<p style='text-align:center; color:#8892b0; font-size:0.85rem; "
-#     "font-family:Rajdhani,sans-serif;'>"
-#     "📈 Tech Stocks Dashboard · Python Bootcamp Final Project · "
-#     "Built with Python, Pandas, Matplotlib & Streamlit</p>",
-#     unsafe_allow_html=True,
-# )
