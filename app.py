@@ -446,3 +446,13 @@ with tab_raw:
     
     
 
+
+# # Footer
+# st.markdown("---")
+# st.markdown(
+#     "<p style='text-align:center; color:#8892b0; font-size:0.85rem; "
+#     "font-family:Rajdhani,sans-serif;'>"
+#     "📈 Tech Stocks Dashboard · Python Bootcamp Final Project · "
+#     "Built with Python, Pandas, Matplotlib & Streamlit</p>",
+#     unsafe_allow_html=True,
+# )
